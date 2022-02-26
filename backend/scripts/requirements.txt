@@ -1,0 +1,7 @@
+fastapi==0.74.1
+uvicorn==0.17.5
+starlette==0.17.1
+pytest==7.0.1
+requests==2.27.1
+Faker==13.2.0
+responses==0.18.0
