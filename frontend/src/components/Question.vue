@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     fetchData() {
-      debugger;
       const parameter = 'question_id=1'; // TEST
       QestionsService.getQuestionData(parameter)
         .then((response) => {
