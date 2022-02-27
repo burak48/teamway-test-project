@@ -4,20 +4,22 @@ from faker import Faker
 
 fake = Faker()
 DATA_COUNT = 5
+ANSWER_LIST = ['a', 'b', 'c', 'd']
 
 
 class Questions():
     def __init__(self):
-        self.question = fake.name()
+        self.question = fake.paragraph(
+            nb_sentences=5, variable_nb_sentences=False)
         self.options = self.generate_options()
-        self.answer = random.randint(10, 50)
+        self.answer = random.choice(ANSWER_LIST)
 
     def generate_options(self):
         options = {
-            "a": random.randint(10, 50),
-            "b": random.randint(10, 50),
-            "c": random.randint(10, 50),
-            "d": random.randint(10, 50),
+            "a": fake.text(max_nb_chars=80),
+            "b": fake.text(max_nb_chars=80),
+            "c": fake.text(max_nb_chars=80),
+            "d": fake.text(max_nb_chars=80),
         }
 
         return options
@@ -25,15 +27,13 @@ class Questions():
 
 if __name__ == "__main__":
     data_list_v1 = []
+    data_list_v2 = []
     for i in range(DATA_COUNT):
         data_list_v1.append(Questions().__dict__)
-
-    data_list_v2 = []
-    for i in range(DATA_COUNT*2):
         data_list_v2.append(Questions().__dict__)
 
     data_list_v3 = []
-    for i in range(DATA_COUNT*3):
+    for i in range(DATA_COUNT-2):
         data_list_v3.append(Questions().__dict__)
 
     with open('../data/questions.json', 'w+') as outfile:
