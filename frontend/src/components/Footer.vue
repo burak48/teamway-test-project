@@ -1,10 +1,6 @@
 <template>
   <footer>
     <div class="row copyright">
-      <div class="footer-menu">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-      </div>
       <p>Copyright &copy; 2022 Burak Saglam</p>
     </div>
   </footer>
@@ -40,22 +36,7 @@ footer * {
   align-items: stretch;
 }
 .copyright {
-  padding: 0.3em 1em;
   background-color: #25262e;
-}
-.footer-menu {
-  float: left;
-  margin-top: 10px;
-}
-
-.footer-menu a {
-  color: #cfd2d6;
-  padding: 6px;
-
-  text-decoration: none;
-}
-.footer-menu a:hover {
-  color: #27bcda;
 }
 .copyright p {
   font-size: 0.9em;

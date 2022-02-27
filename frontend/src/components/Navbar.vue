@@ -1,10 +1,6 @@
 <template>
   <div class="header">
     <a href="#default" class="logo">CompanyLogo</a>
-    <div class="header-right">
-      <a class="active" href="#">Home</a>
-      <a href="#">About</a>
-    </div>
   </div>
 </template>
 
@@ -54,24 +50,11 @@ body {
   color: black;
 }
 
-.header a.active {
-  background-color: dodgerblue;
-  color: white;
-}
-
-.header-right {
-  float: right;
-}
-
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
     display: block;
     text-align: left;
-  }
-
-  .header-right {
-    float: none;
   }
 }
 </style>
