@@ -1,57 +1,51 @@
 <template>
-  <div>
-    <div id="container">
-      <h1 id="headline">Questions</h1>
-      <hr class="divider" />
+  <div id="container">
+    <h1 id="headline">Questions</h1>
 
-      <div v-if="loading">Loading...</div>
+    <div v-if="loading">Loading...</div>
 
-      <div v-else>
-        <div v-if="questionIndex < 5">
-          <p>{{ questions[questionIndex].question }}</p>
+    <div v-else>
+      <div v-if="questionIndex < 5">
+        <p>{{ questions[questionIndex].question }}</p>
 
-          <label
-            v-for="(option, index) in questions[questionIndex].options"
-            :key="index"
-            :for="index"
-          >
-            <input
-              :id="index"
-              v-model="selectedAnswer"
-              type="radio"
-              class="hidden"
-              :value="index"
-              :disabled="selectedAnswer != ''"
-              @click="isAnswer(index)"
-            />
-            {{ option }}
-          </label>
-          <div class="btn-next-wrapper">
-            <button v-show="selectedAnswer != ''" class="btn-next" @click="nextQuestion">
-              Next Question &gt;
-            </button>
-          </div>
-        </div>
-
-        <div v-else>
-          <h2 class="result-text">Your Score Result</h2>
-          <div class="result">
-            <p>
-              Correct Answers:
-              <span class="correct-text">{{ correctAnswer }}</span>
-            </p>
-            <p>
-              Incorrect Answers:
-              <span class="wrong-text">{{ wrongAnswer }}</span>
-            </p>
-          </div>
-          <div class="btn-next-wrapper">
-            <button class="btn-next" @click="reset">Start Over</button>
-          </div>
+        <label
+          v-for="(option, index) in questions[questionIndex].options"
+          :key="index"
+          :for="index"
+        >
+          <input
+            :id="index"
+            v-model="selectedAnswer"
+            type="radio"
+            class="hidden"
+            :value="index"
+            @click="isAnswer(index)"
+          />
+          {{ option }}
+        </label>
+        <div class="btn-next-wrapper">
+          <button v-show="selectedAnswer != ''" class="btn-next" @click="nextQuestion">
+            Next Question &gt;
+          </button>
         </div>
       </div>
 
-      <hr class="divider" />
+      <div v-else>
+        <h2 class="result-text">Your Score Result</h2>
+        <div class="result">
+          <p>
+            Correct Answers:
+            <span class="correct-text">{{ correctAnswer }}</span>
+          </p>
+          <p>
+            Incorrect Answers:
+            <span class="wrong-text">{{ wrongAnswer }}</span>
+          </p>
+        </div>
+        <div class="btn-next-wrapper">
+          <button class="btn-next" @click="reset">Start Over</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -126,6 +120,10 @@ export default {
 </script>
 
 <style scoped>
+#container {
+  min-width: 60vw;
+  margin: 0 auto;
+}
 label {
   display: block;
   width: 100%;
@@ -134,8 +132,10 @@ label {
   padding-top: 2px;
   padding-bottom: 2px;
   border: 1px solid gray;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: left;
+  min-height: 50px;
+  padding: 15px 10px;
 }
 label:hover {
   cursor: pointer;
@@ -149,9 +149,14 @@ label:hover {
   background-color: lightcoral;
   border: 1px solid lightcoral;
 }
+input[type='radio'] {
+  width: 15px;
+  height: 15px;
+}
 .btn-next-wrapper {
   display: flow-root;
   margin-top: 0.5rem;
+  height: 40px;
 }
 .btn-next {
   float: right;
@@ -163,7 +168,7 @@ label:hover {
   line-height: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.025em;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 .result-text {
   font-size: 1.875rem;

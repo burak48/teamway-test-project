@@ -20,6 +20,9 @@ footer {
   background-color: #121315;
   color: #a7a7a7;
   font-size: 16px;
+  position: fixed;
+  bottom: 0;
+  min-width: 100vw;
 }
 footer * {
   font-family: 'Poppins', sans-serif;
