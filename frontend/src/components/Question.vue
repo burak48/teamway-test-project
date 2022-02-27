@@ -14,7 +14,6 @@
             v-for="(option, index) in questions[questionIndex].options"
             :key="index"
             :for="index"
-            :class="index == questions[questionIndex]['answer'] ? 'label-correct' : 'label-wrong'"
           >
             <input
               :id="index"
