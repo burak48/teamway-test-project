@@ -1,29 +1,41 @@
-# frontend
+# Frontend Installation
+
+<br>
 
 ## Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+<br>
+
+## Compiles and hot-reloads for development
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+<br>
+
+## Compiles and minifies for production
 ```
 yarn build
 ```
 
-### Run your unit tests
+<br>
+
+## Run your unit tests
 ```
 yarn test:unit
 ```
 
-### Lints and fixes files
+<br>
+
+## Lints and fixes files
 ```
 yarn lint
 ```
+
+<br>
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
