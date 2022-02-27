@@ -2,8 +2,8 @@
   <footer>
     <div class="row copyright">
       <div class="footer-menu">
-        <a href="">Home</a>
-        <a href="">About</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
       </div>
       <p>Copyright &copy; 2022 Burak Saglam</p>
     </div>

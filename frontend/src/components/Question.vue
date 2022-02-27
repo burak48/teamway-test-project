@@ -87,7 +87,6 @@ export default {
           if (response.status === 200) {
             if (Object.prototype.hasOwnProperty.call(response.data, 'result')) {
               this.questions = response.data.result;
-              console.log('QUESTIONS', this.questions);
             }
           }
         })
